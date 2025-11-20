@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
+    //this arguments to be passed in any screen like this (arguments as calss)
+    // final arguments = settings.arguments;
+
     switch (settings.name) {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(

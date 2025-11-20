@@ -5,7 +5,7 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.9.2
+  sdk: ^3.6.2
 
 dependencies:
   cupertino_icons: ^1.0.8
@@ -34,8 +34,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  # assets:
-  #   - images/example.png
+  assets:
+    - assets/images/
+    - assets/svgs/
   # fonts:
   #   - family: CustomFont
   #     fonts:
