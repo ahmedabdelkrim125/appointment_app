@@ -5,51 +5,38 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.9.2
+  sdk: ^3.6.2
 
 dependencies:
+  cupertino_icons: ^1.0.8
+  dio: ^5.9.0
+  easy_localization: ^3.0.8
   flutter:
     sdk: flutter
-
-  # Icons
-  cupertino_icons: ^1.0.8 # iOS-style icons
-
-  # Networking
-  dio: ^5.9.0 # HTTP client
-  retrofit: ^4.9.0 # API service generator
-  retrofit_generator: ^10.1.4 # Code generator for Retrofit
-  pretty_dio_logger: ^1.4.0 # Pretty logging for Dio
-
-  # State Management
-  flutter_bloc: ^9.1.1 # Bloc state management
-
-  # Localization
-  easy_localization: ^3.0.8 # Multi-language support
-  intl: ^0.20.2 # Date & number formatting
-
-  # Dependency Injection
-  get_it: ^9.0.5 # Service locator
-
-  # Data Models & Code Generation
-  freezed: ^3.2.3 # Immutable models generator
-  freezed_annotation: ^3.1.0 # Freezed annotations
-  json_annotation: ^4.9.0 # JSON model annotations
-  json_serializable: ^6.11.1 # JSON serialization generator
-
-  # Splash Screen
-  flutter_native_splash: ^2.4.7 # Auto splash screen generator
-
+  flutter_bloc: ^9.1.1
+  flutter_native_splash: ^2.4.7
+  flutter_screenutil: ^5.9.3
+  flutter_svg: ^2.2.2
+  freezed: ^3.2.3
+  freezed_annotation: ^3.1.0
+  get_it: ^9.0.5
+  intl: ^0.20.2
+  json_annotation: ^4.9.0
+  json_serializable: ^6.11.1
+  pretty_dio_logger: ^1.4.0
+  retrofit: ^4.9.0
+  retrofit_generator: ^10.1.4
 
 dev_dependencies:
+  flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true
-  # assets:
-  #   - images/example.png
-
+  assets:
+    - assets/images/
+    - assets/svgs/
   # fonts:
   #   - family: CustomFont
   #     fonts:
