@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Theme while app process is starting -->
+    <!-- Launch theme for Android 12+ (no native splash) -->
     <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
-        <!-- No windowBackground here => no native splash -->
         <item name="android:forceDarkAllowed">false</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
-        <!-- إضافة السطر ده لإلغاء preview window -->
-        <item name="android:windowDisablePreview">true</item>
+        <!-- removed: android:windowSplashScreenBackground -->
+        <!-- removed: android:windowSplashScreenAnimatedIcon -->
+        <!-- removed: android:windowSplashScreenIconBackgroundColor -->
     </style>
 
-    <!-- Theme used after Flutter starts -->
+    <!-- Theme used after Flutter starts (no custom background) -->
     <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
-        <!-- No custom windowBackground here as well -->
+        <!-- removed: android:windowBackground -->
     </style>
 
 </resources>

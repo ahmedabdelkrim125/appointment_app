@@ -8,32 +8,47 @@ environment:
   sdk: ^3.6.2
 
 dependencies:
-  cupertino_icons: ^1.0.8
-  dio: ^5.9.0
-  easy_localization: ^3.0.8
   flutter:
     sdk: flutter
-  flutter_bloc: ^9.1.1
-  flutter_native_splash: ^2.4.7
-  flutter_screenutil: ^5.9.3
-  flutter_svg: ^2.2.2
-  freezed: ^3.2.3
-  freezed_annotation: ^3.1.0
-  get_it: ^9.0.5
-  intl: ^0.20.2
-  json_annotation: ^4.9.0
-  json_serializable: ^6.11.1
-  pretty_dio_logger: ^1.4.0
-  retrofit: ^4.9.0
-  retrofit_generator: ^10.1.4
+
+  # ---------- UI & Icons ----------
+  cupertino_icons: ^1.0.8           # iOS-style icons
+  flutter_svg: ^2.2.2              # Display SVG images
+  flutter_screenutil: ^5.9.3       # Responsive UI (sizes, fonts)
+
+  # ---------- State Management & DI ----------
+  flutter_bloc: ^9.1.1             # State management with BLoC pattern
+  get_it: ^9.0.5                   # Service locator / dependency injection
+
+  # ---------- Networking & APIs ----------
+  dio: ^5.9.0                      # HTTP client for API calls
+  pretty_dio_logger: ^1.4.0        # Logs Dio requests & responses
+  retrofit: ^4.9.0                 # Type-safe API client on top of Dio
+
+  # ---------- JSON & Models (runtime) ----------
+  json_annotation: ^4.9.0          # Annotations for JSON models
+
+  # ---------- Localization & Formatting ----------
+  easy_localization: ^3.0.8        # Multi-language support
+  intl: ^0.20.2                    # Date/number formatting, locales
+
+  # ---------- Native Stuff ----------
+  flutter_native_splash: ^2.4.7    # Generate native splash screen
 
 dev_dependencies:
   flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
 
+  # ---------- Code Generation ----------
+  json_serializable: ^6.11.1       # Generates JSON (from/to) code
+  freezed_annotation: ^3.1.0       # Annotations for Freezed models
+  freezed: ^3.2.3                  # Data classes, unions, immutables
+  retrofit_generator: ^10.1.4      # Code generator for Retrofit
+
 flutter:
   uses-material-design: true
+
   assets:
     - assets/images/
     - assets/svgs/
