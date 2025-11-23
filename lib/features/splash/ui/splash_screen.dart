@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:appointment_app/core/helper/extensions.dart';
 import 'package:appointment_app/core/routing/routes.dart';
 import 'package:appointment_app/core/theme/app_images.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,8 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void _goNext() {
     if (!mounted) return;
-    Navigator.pushReplacementNamed(context, Routes.onBoardingScreen);
+    context.pushNamedAndRemoveUntil(Routes.onBoardingScreen,
+        predicate: (route) => false);
   }
 
   @override
@@ -42,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: Colors.white, // Splash background color
       body: Center(
         child: SvgPicture.asset(
-          AppImages.splashScreen,    // SVG splash image
+          AppImages.splashScreen, // SVG splash image
           fit: BoxFit.contain,
         ),
       ),
