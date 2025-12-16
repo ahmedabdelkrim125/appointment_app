@@ -28,8 +28,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void _goNext() {
     if (!mounted) return;
-    context.pushNamedAndRemoveUntil(Routes.onBoardingScreen,
-        predicate: (route) => false);
+    context.pushNamedAndRemoveUntil(
+      Routes.onBoardingScreen,
+      predicate: (route) => false,
+    );
   }
 
   @override

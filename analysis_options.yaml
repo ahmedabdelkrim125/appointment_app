@@ -9,7 +9,9 @@
 # packages, and plugins designed to encourage good coding practices.
 analyzer:
   errors:
+    depend_on_referenced_packages: ignore
     deprecated_member_use: ignore
+    unreachable_switch_default: ignore
 include: package:flutter_lints/flutter.yaml
 
 linter:

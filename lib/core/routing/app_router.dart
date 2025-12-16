@@ -1,8 +1,12 @@
+import 'package:appointment_app/core/di/dependency_injection.dart';
 import 'package:appointment_app/core/routing/routes.dart';
+import 'package:appointment_app/features/home/ui/home_screen.dart';
+import 'package:appointment_app/features/login/logic/login_cubit.dart';
 import 'package:appointment_app/features/login/ui/login_screen.dart';
 import 'package:appointment_app/features/onBoarding/ui/onboarding_screen.dart';
 import 'package:appointment_app/features/splash/ui/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -11,26 +15,24 @@ class AppRouter {
 
     switch (settings.name) {
       case Routes.onBoardingScreen:
-        return MaterialPageRoute(
-          builder: (_) => const OnboardingScreen(),
-        );
+        return MaterialPageRoute(builder: (_) => const OnboardingScreen());
       case Routes.splashScreen:
-        return MaterialPageRoute(
-          builder: (_) => const SplashScreen(),
-        );
+        return MaterialPageRoute(builder: (_) => const SplashScreen());
 
+      case Routes.homeScreen:
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
       case Routes.loginScreen:
         return MaterialPageRoute(
-          builder: (_) => const LoginScreen(),
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<LoginCubit>(),
+            child: const LoginScreen(),
+          ),
         );
 
       default:
         return MaterialPageRoute(
-          builder: (_) => const Scaffold(
-            body: Center(
-              child: Text("Route not found"),
-            ),
-          ),
+          builder: (_) =>
+              const Scaffold(body: Center(child: Text("Route not found"))),
         );
     }
   }

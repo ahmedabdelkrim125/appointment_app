@@ -5,46 +5,49 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.6.2
+  sdk: ^3.8.0
 
 dependencies:
   flutter:
     sdk: flutter
 
-  # ---------- UI & Icons ----------
-  cupertino_icons: ^1.0.8           # iOS-style icons
-  flutter_svg: ^2.2.2              # Display SVG images
-  flutter_screenutil: ^5.9.3       # Responsive UI (sizes, fonts)
+  # UI & Icons
+  cupertino_icons: ^1.0.8       # iOS-style icons
+  flutter_svg: ^2.2.2            # Display SVG images
+  flutter_screenutil: ^5.9.3     # Responsive UI scaling
 
-  # ---------- State Management & DI ----------
-  flutter_bloc: ^9.1.1             # State management with BLoC pattern
-  get_it: ^9.0.5                   # Service locator / dependency injection
+  # State Management
+  flutter_bloc: ^9.1.1           # Bloc state management
 
-  # ---------- Networking & APIs ----------
-  dio: ^5.9.0                      # HTTP client for API calls
-  pretty_dio_logger: ^1.4.0        # Logs Dio requests & responses
-  retrofit: ^4.9.0                 # Type-safe API client on top of Dio
+  # Localization
+  easy_localization: ^3.0.8      # Multi-language support
 
-  # ---------- JSON & Models (runtime) ----------
-  json_annotation: ^4.9.0          # Annotations for JSON models
+  # Networking
+  dio: ^5.9.0                    # HTTP client
+  pretty_dio_logger: ^1.4.0     # Logs API requests nicely
+  retrofit: ^4.9.1              # API generator wrapper for Dio
 
-  # ---------- Localization & Formatting ----------
-  easy_localization: ^3.0.8        # Multi-language support
-  intl: ^0.20.2                    # Date/number formatting, locales
+  # Dependency Injection
+  get_it: ^9.0.5                # Service locator
 
-  # ---------- Native Stuff ----------
-  flutter_native_splash: ^2.4.7    # Generate native splash screen
+  # Date & formatting
+  intl: ^0.20.2                 # Date/number formatting
+
+  # Code Annotations (needed in runtime)
+  json_annotation: ^4.9.0       # Needed for json_serializable
+  freezed_annotation: ^3.1.0    # Annotations used by Freezed
 
 dev_dependencies:
-  flutter_lints: ^5.0.0
+  # Flutter Tools
+  flutter_lints: ^5.0.0          # Recommended lint rules
   flutter_test:
-    sdk: flutter
+    sdk: flutter                 # Testing framework
 
-  # ---------- Code Generation ----------
-  json_serializable: ^6.11.1       # Generates JSON (from/to) code
-  freezed_annotation: ^3.1.0       # Annotations for Freezed models
-  freezed: ^3.2.3                  # Data classes, unions, immutables
-  retrofit_generator: ^10.1.4      # Code generator for Retrofit
+  # Code Generation Tools
+  build_runner: ^2.10.4           # Runs code generators
+  json_serializable: ^6.11.1      # Generates JSON mapping code
+  retrofit_generator: ^10.1.4     # Generates Retrofit API code
+  freezed: ^3.2.3                 # Generates immutable classes using Freezed
 
 flutter:
   uses-material-design: true

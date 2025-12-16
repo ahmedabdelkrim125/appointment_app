@@ -1,25 +1,15 @@
-import 'package:appointment_app/core/helper/spacing.dart';
-import 'package:appointment_app/core/helper/validation.dart';
-import 'package:appointment_app/core/theme/app_colors.dart';
-import 'package:appointment_app/core/theme/text_styles.dart';
-import 'package:appointment_app/core/widgets/app_form_field.dart';
-import 'package:appointment_app/core/widgets/app_text_button.dart';
-import 'package:appointment_app/features/login/ui/widgets/login_signup_text.dart';
-import 'package:appointment_app/features/login/ui/widgets/login_terms_text.dart';
-import 'package:appointment_app/features/login/ui/widgets/social_login_section.dart';
+import '../../../core/helper/spacing.dart';
+import '../../../core/theme/text_styles.dart';
+import 'widgets/login_bloc_listener.dart';
+import 'widgets/login_form.dart';
+import 'widgets/login_signup_text.dart';
+import 'widgets/login_terms_text.dart';
+import 'widgets/social_login_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
-
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
-  final formKey = GlobalKey<FormState>();
-  bool isObscureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -38,76 +28,30 @@ class _LoginScreenState extends State<LoginScreen> {
                   style: TextStyles.font14GruyRegular,
                 ),
                 verticalSpace(height: 36),
-
-                // ---------------------- FORM ----------------------
-                Form(
-                  key: formKey,
-                  child: Column(
-                    children: [
-                      AppFormField(
-                        hintText: 'Email',
-                        validator: AppValidator.validateEmail,
-                      ),
-                      verticalSpace(height: 18),
-                      AppFormField(
-                        hintText: 'Password',
-                        validator: AppValidator.validatePassword,
-                        obscureText: isObscureText,
-                        suffixIcon: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              isObscureText = !isObscureText;
-                            });
-                          },
-                          icon: Icon(
-                            isObscureText
-                                ? Icons.visibility_off
-                                : Icons.visibility,
-                            color: isObscureText
-                                ? AppColors.gray
-                                : AppColors.primary,
-                          ),
-                        ),
-                      ),
-                      verticalSpace(height: 25),
-
-                      Align(
-                        alignment: AlignmentDirectional.centerEnd,
-                        child: TextButton(
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero,
-                            minimumSize: Size.zero,
-                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          ),
-                          onPressed: () {},
-                          child: Text(
-                            'Forgot Password?',
-                            style: TextStyles.font13BlueRegular,
-                          ),
-                        ),
-                      ),
-                      verticalSpace(height: 40),
-
-                      // ---------------------- LOGIN BUTTON ----------------------
-                      AppTextButton(
-                        textStyle: TextStyles.font16WhiteSemiBold,
-                        buttonText: 'Login',
-                        onPressed: () {
-                          if (formKey.currentState!.validate()) {
-                            debugPrint("VALID ✔");
-                          }
-                        },
-                      ),
-
-                      verticalSpace(height: 46),
-                      SocialLoginSection(),
-                      verticalSpace(height: 32),
-                      LoginTermsText(),
-                      verticalSpace(height: 24),
-                      LoginSignupText(),
-                    ],
+                const LoginForm(),
+                verticalSpace(height: 16),
+                Align(
+                  alignment: AlignmentDirectional.centerEnd,
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      minimumSize: Size.zero,
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      'Forgot Password?',
+                      style: TextStyles.font13BlueRegular,
+                    ),
                   ),
                 ),
+                verticalSpace(height: 40),
+                const SocialLoginSection(),
+                verticalSpace(height: 32),
+                const LoginTermsText(),
+                verticalSpace(height: 24),
+                const LoginSignupText(),
+                LoginBlocListener(),
               ],
             ),
           ),

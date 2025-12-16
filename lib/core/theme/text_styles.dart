@@ -15,26 +15,37 @@ class TextStyles {
     fontWeight: FontWeightHelper.bold,
     color: AppColors.primary,
   );
+
   static TextStyle font24BlueBold = TextStyle(
     fontSize: 24.sp,
     fontWeight: FontWeightHelper.bold,
     color: AppColors.primary,
   );
-    static TextStyle font12GruyRegular = TextStyle(
+
+  static TextStyle font12GruyRegular = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeightHelper.regular,
     color: AppColors.gray,
   );
+
   static TextStyle font13GruyRegular = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeightHelper.regular,
     color: AppColors.gray,
   );
+
   static TextStyle font13BlueRegular = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeightHelper.regular,
     color: AppColors.primary,
   );
+
+  static TextStyle font13grayBold = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColors.gray[700],
+  );
+
   static TextStyle font14DarkBlueMedium = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.medium,
@@ -46,6 +57,7 @@ class TextStyles {
     fontWeight: FontWeightHelper.regular,
     color: AppColors.gray,
   );
+
   static TextStyle font14lightGrayRegular = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.regular,
@@ -58,30 +70,58 @@ class TextStyles {
     color: AppColors.white,
   );
 
-static TextStyle font14GreyRegular = TextStyle(
-  fontSize: 14.sp,
-  fontWeight: FontWeightHelper.regular,
-  color: AppColors.neutralGrey,
-);
+  static TextStyle font14GreyRegular = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.neutralGrey,
+  );
 
-static TextStyle font14BlackMedium = TextStyle(
-  fontSize: 14.sp,
-  fontWeight: FontWeightHelper.medium,
-  color: AppColors.dark,
-);
+  static TextStyle font14BlackMedium = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: AppColors.dark,
+  );
 
-static TextStyle font14BlackRegular = TextStyle(
-  fontSize: 14.sp,
-  fontWeight: FontWeightHelper.regular,
-  color: AppColors.dark,
-);
+  static TextStyle font14BlackRegular = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.dark,
+  );
 
-static TextStyle font14BlueSemiBold = TextStyle(
-  fontSize: 14.sp,
-  fontWeight: FontWeightHelper.semiBold,
-  color: AppColors.primary,
-);
+  static TextStyle font14BlueSemiBold = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: AppColors.primary,
+  );
 
+  // Dialog Styles
+  static TextStyle font18BlackBold = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColors.black,
+  );
 
+  static TextStyle font16BlackMedium = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: AppColors.black,
+  );
 
+  static TextStyle font14WhiteSemiBold = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: AppColors.white,
+  );
+
+  static TextStyle font14ErrorSemiBold = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: AppColors.error,
+  );
+
+  static TextStyle font14SuccessSemiBold = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: AppColors.success,
+  );
 }

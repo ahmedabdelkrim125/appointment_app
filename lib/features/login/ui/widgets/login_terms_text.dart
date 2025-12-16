@@ -17,10 +17,7 @@ class LoginTermsText extends StatelessWidget {
             text: "Terms & Conditions ",
             style: TextStyles.font14BlackMedium,
           ),
-          TextSpan(
-            text: "and\n",
-            style: TextStyles.font14GreyRegular,
-          ),
+          TextSpan(text: "and\n", style: TextStyles.font14GreyRegular),
           TextSpan(
             text: "Privacy Policy.",
             style: TextStyles.font14BlackMedium,

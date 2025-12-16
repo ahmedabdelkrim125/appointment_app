@@ -12,8 +12,10 @@ class GetStartedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
-        context.pushNamedAndRemoveUntil(Routes.loginScreen,
-            predicate: (route) => false);
+        context.pushNamedAndRemoveUntil(
+          Routes.loginScreen,
+          predicate: (route) => false,
+        );
       },
       style: ButtonStyle(
         backgroundColor: WidgetStateProperty.all(AppColors.primary),
@@ -25,10 +27,7 @@ class GetStartedButton extends StatelessWidget {
           ),
         ),
       ),
-      child: Text(
-        'GetStarted',
-        style: TextStyles.font16WhiteSemiBold,
-      ),
+      child: Text('GetStarted', style: TextStyles.font16WhiteSemiBold),
     );
   }
 }

@@ -1,7 +1,7 @@
-import 'package:appointment_app/core/theme/text_styles.dart';
-import 'package:appointment_app/features/onBoarding/ui/Widgets/doc_logo_and_name.dart';
-import 'package:appointment_app/features/onBoarding/ui/Widgets/doctor_image_and_text.dart';
-import 'package:appointment_app/features/onBoarding/ui/Widgets/get_started_button.dart';
+import '../../../core/theme/text_styles.dart';
+import 'Widgets/doc_logo_and_name.dart';
+import 'Widgets/doctor_image_and_text.dart';
+import 'Widgets/get_started_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -30,10 +30,10 @@ class OnboardingScreen extends StatelessWidget {
                         style: TextStyles.font13GruyRegular,
                       ),
                       SizedBox(height: 30.h),
-                      GetStartedButton()
+                      GetStartedButton(),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),

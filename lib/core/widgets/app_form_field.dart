@@ -1,5 +1,5 @@
-import 'package:appointment_app/core/theme/app_colors.dart';
-import 'package:appointment_app/core/theme/text_styles.dart';
+import '../theme/app_colors.dart';
+import '../theme/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -24,7 +24,7 @@ class AppFormField extends StatelessWidget {
     this.contentPadding,
     this.enabledBorderColor,
     this.focusedBorderColor,
-    this.borderWidth = 1.3,
+    this.borderWidth = 1.3, // ← القيمة الافتراضية
     this.borderRadius,
     this.fillColor,
     this.filled,
@@ -76,13 +76,11 @@ class AppFormField extends StatelessWidget {
       style: textStyle ?? TextStyles.font14DarkBlueMedium,
       decoration: InputDecoration(
         isDense: isDense,
-        contentPadding: contentPadding ??
-            EdgeInsets.symmetric(
-              vertical: 18.h,
-              horizontal: 8.w,
-            ),
+        contentPadding:
+            contentPadding ??
+            EdgeInsets.symmetric(vertical: 18.h, horizontal: 8.w),
 
-        // -------- DEFAULT BORDER --------
+        // DEFAULT BORDER
         border: OutlineInputBorder(
           borderRadius: radius,
           borderSide: BorderSide(
@@ -91,8 +89,9 @@ class AppFormField extends StatelessWidget {
           ),
         ),
 
-        // -------- ENABLED BORDER --------
-        enabledBorder: enabledBorder ??
+        // ENABLED BORDER
+        enabledBorder:
+            enabledBorder ??
             OutlineInputBorder(
               borderSide: BorderSide(
                 color: enabledBorderColor ?? AppColors.lighterGray,
@@ -101,8 +100,9 @@ class AppFormField extends StatelessWidget {
               borderRadius: radius,
             ),
 
-        // -------- FOCUSED BORDER --------
-        focusedBorder: focusedBorder ??
+        // FOCUSED BORDER
+        focusedBorder:
+            focusedBorder ??
             OutlineInputBorder(
               borderSide: BorderSide(
                 color: focusedBorderColor ?? AppColors.primary,
@@ -110,6 +110,18 @@ class AppFormField extends StatelessWidget {
               ),
               borderRadius: radius,
             ),
+
+        // ERROR BORDER
+        errorBorder: OutlineInputBorder(
+          borderRadius: radius,
+          borderSide: BorderSide(color: Colors.red, width: borderWidth),
+        ),
+
+        // FOCUSED ERROR BORDER
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: radius,
+          borderSide: BorderSide(color: Colors.red, width: borderWidth),
+        ),
 
         fillColor: fillColor ?? AppColors.offWhite,
         filled: filled ?? true,

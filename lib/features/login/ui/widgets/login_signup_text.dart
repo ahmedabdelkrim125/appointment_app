@@ -20,10 +20,7 @@ class LoginSignupText extends StatelessWidget {
             minimumSize: Size.zero,
             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           ),
-          child: Text(
-            "Sign Up",
-            style: TextStyles.font14BlueSemiBold,
-          ),
+          child: Text("Sign Up", style: TextStyles.font14BlueSemiBold),
         ),
       ],
     );
