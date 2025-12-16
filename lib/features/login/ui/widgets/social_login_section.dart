@@ -1,7 +1,7 @@
-import 'package:appointment_app/core/helper/spacing.dart';
-import 'package:appointment_app/core/theme/app_colors.dart';
-import 'package:appointment_app/core/theme/app_images.dart';
-import 'package:appointment_app/core/theme/text_styles.dart';
+import '../../../../core/helper/spacing.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_images.dart';
+import '../../../../core/theme/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -17,10 +17,7 @@ class SocialLoginSection extends StatelessWidget {
         Row(
           children: [
             Expanded(
-              child: Divider(
-                thickness: 1,
-                color: AppColors.neutralGrey,
-              ),
+              child: Divider(thickness: 1, color: AppColors.neutralGrey),
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 12.w),
@@ -30,10 +27,7 @@ class SocialLoginSection extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: Divider(
-                thickness: 1,
-                color: AppColors.neutralGrey,
-              ),
+              child: Divider(thickness: 1, color: AppColors.neutralGrey),
             ),
           ],
         ),
@@ -50,7 +44,7 @@ class SocialLoginSection extends StatelessWidget {
             SizedBox(width: 16.w),
             _socialCircle(AppImages.apple),
           ],
-        )
+        ),
       ],
     );
   }
@@ -63,12 +57,7 @@ class SocialLoginSection extends StatelessWidget {
         shape: BoxShape.circle,
         color: AppColors.neutralGrey.withOpacity(.5),
       ),
-      child: Center(
-        child: SvgPicture.asset(
-          assetPath,
-          width: 26.w,
-        ),
-      ),
+      child: Center(child: SvgPicture.asset(assetPath, width: 26.w)),
     );
   }
 }
