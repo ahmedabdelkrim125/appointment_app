@@ -4,9 +4,12 @@ import 'package:appointment_app/features/home/ui/home_screen.dart';
 import 'package:appointment_app/features/login/logic/login_cubit.dart';
 import 'package:appointment_app/features/login/ui/login_screen.dart';
 import 'package:appointment_app/features/onBoarding/ui/onboarding_screen.dart';
+import 'package:appointment_app/features/signup/logic/signup_cubit.dart';
 import 'package:appointment_app/features/splash/ui/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../features/signup/ui/signup_screen.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -26,6 +29,14 @@ class AppRouter {
           builder: (_) => BlocProvider(
             create: (context) => getIt<LoginCubit>(),
             child: const LoginScreen(),
+          ),
+        );
+
+      case Routes.signupScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<SignupCubit>(),
+            child: const SignupScreen(),
           ),
         );
 
