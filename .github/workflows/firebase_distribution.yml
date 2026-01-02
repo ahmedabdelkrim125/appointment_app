@@ -1,0 +1,52 @@
+name: Flutter Android Firebase Distribution
+
+on:
+  push:
+    branches:
+      - main
+      - development
+  workflow_dispatch: #     Action يدوي للتجربة
+
+jobs:
+  distribute:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - run: flutter pub get
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Install Fastlane Plugins
+        run: bundle exec fastlane add_plugin firebase_app_distribution
+
+      - name: Run Fastlane
+        env:
+          SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+          DEV_APP_ID: "1:367726199888:android:b78c72c04ef8ee74d17d55"
+          PROD_APP_ID: "1:367726199888:android:527cef7bcb7c8e81d17d55"
+        run: |
+          echo "$SERVICE_ACCOUNT_JSON" > android/service-account.json
+          if [ "${{ github.ref_name }}" == "main" ]; then
+            bundle exec fastlane distribute_firebase flavor:production app_id:$PROD_APP_ID
+          else
+            # خلي بالك هنا أنت كاتب في الفاست لاين "dev" بس في الـ switch كنت كاتب "development"
+            # تأكد إن الـ flavor name مطابق للي في مشروع الفلاتر
+            bundle exec fastlane distribute_firebase flavor:dev app_id:$DEV_APP_ID
+          fi
