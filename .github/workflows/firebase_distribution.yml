@@ -5,7 +5,7 @@ on:
     branches:
       - main
       - development
-      - Test_GitHub_Actions
+      - Trigger_GitHub_Actions
   workflow_dispatch:
 
 jobs:
