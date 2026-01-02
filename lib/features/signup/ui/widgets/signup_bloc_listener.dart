@@ -4,7 +4,6 @@ import 'package:appointment_app/features/signup/logic/signup_cubit.dart';
 import 'package:appointment_app/features/signup/logic/signup_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../core/routing/routes.dart';
 import '../../../../core/widgets/modern_dialog_helper.dart';
 

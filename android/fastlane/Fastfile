@@ -39,18 +39,22 @@
 default_platform(:android)
 
 platform :android do
-  desc "Build APK and upload to Firebase App Distribution"
-  lane :distribute_firebase do
+  lane :distribute_firebase do |options|
+    flavor = options[:flavor]
+    app_id = options[:app_id]
 
-    # Build production APK
-    sh("flutter build apk --flavor production -t lib/main_production.dart --release")
+    main_file =
+      flavor == "production" ? "lib/main_production.dart" : "lib/main_development.dart"
 
-    # Upload APK to Firebase
+    sh("flutter build apk --flavor #{flavor} -t #{main_file} --release")
+
     firebase_app_distribution(
-      app: "1:367726199888:android:527cef7bcb7c8e81d17d55",
+      app: app_id,
+      service_credentials_file: "android/service-account.json",
       testers: "ahmed125abdelkrim@gmail.com",
-      release_notes: "Production build",
-      apk_path: "../build/app/outputs/flutter-apk/app-production-release.apk"
+      release_notes: "Automated build for #{flavor}",
+      apk_path: "../build/app/outputs/flutter-apk/app-#{flavor}-release.apk"
     )
   end
 end
+

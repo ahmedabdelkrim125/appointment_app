@@ -26,6 +26,7 @@ class SignupLoginText extends StatelessWidget {
             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           ),
           child: Text("Sign In", style: TextStyles.font14BlueSemiBold),
+          
         ),
       ],
     );
