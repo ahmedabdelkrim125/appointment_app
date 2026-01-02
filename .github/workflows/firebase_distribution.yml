@@ -5,7 +5,8 @@ on:
     branches:
       - main
       - development
-  workflow_dispatch: #     Action يدوي للتجربة
+      - Trigger_GitHub_Actions
+  workflow_dispatch:
 
 jobs:
   distribute:
@@ -46,7 +47,5 @@ jobs:
           if [ "${{ github.ref_name }}" == "main" ]; then
             bundle exec fastlane distribute_firebase flavor:production app_id:$PROD_APP_ID
           else
-            # خلي بالك هنا أنت كاتب في الفاست لاين "dev" بس في الـ switch كنت كاتب "development"
-            # تأكد إن الـ flavor name مطابق للي في مشروع الفلاتر
             bundle exec fastlane distribute_firebase flavor:dev app_id:$DEV_APP_ID
           fi
