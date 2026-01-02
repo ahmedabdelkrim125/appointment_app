@@ -5,7 +5,8 @@ on:
     branches:
       - main
       - development
-  workflow_dispatch: #     Action يدوي للتجربة
+      - Test_GitHub_Actions
+  workflow_dispatch:
 
 jobs:
   distribute:
@@ -34,19 +35,19 @@ jobs:
           bundler-cache: true
 
       - name: Install Fastlane Plugins
+        working-directory: android
         run: bundle exec fastlane add_plugin firebase_app_distribution
 
       - name: Run Fastlane
+        working-directory: android
         env:
           SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
           DEV_APP_ID: "1:367726199888:android:b78c72c04ef8ee74d17d55"
           PROD_APP_ID: "1:367726199888:android:527cef7bcb7c8e81d17d55"
         run: |
-          echo "$SERVICE_ACCOUNT_JSON" > android/service-account.json
+          echo "$SERVICE_ACCOUNT_JSON" > service-account.json
           if [ "${{ github.ref_name }}" == "main" ]; then
             bundle exec fastlane distribute_firebase flavor:production app_id:$PROD_APP_ID
           else
-            # خلي بالك هنا أنت كاتب في الفاست لاين "dev" بس في الـ switch كنت كاتب "development"
-            # تأكد إن الـ flavor name مطابق للي في مشروع الفلاتر
             bundle exec fastlane distribute_firebase flavor:dev app_id:$DEV_APP_ID
           fi
