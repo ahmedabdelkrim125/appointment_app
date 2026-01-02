@@ -32,14 +32,12 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
-          # التعديل هنا: بنحدد المسار اللي فيه الـ Gemfile
           working-directory: android
           bundler-cache: true 
 
       - name: Install Fastlane Plugins
         working-directory: android
         run: |
-          bundle install
           bundle exec fastlane add_plugin firebase_app_distribution
 
       - name: Run Fastlane
