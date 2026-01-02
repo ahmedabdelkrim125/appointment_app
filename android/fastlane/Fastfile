@@ -6,7 +6,7 @@ platform :android do
     app_id = options[:app_id]
     main_file = flavor == "production" ? "lib/main_production.dart" : "lib/main_development.dart"
 
-    sh("cd .. && flutter build apk --flavor #{flavor} -t #{main_file} --release")
+    sh("cd .. && flutter build apk --flavor #{flavor} -t #{main_file} --release --verbose")
 
     firebase_app_distribution(
       app: app_id,
