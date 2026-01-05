@@ -50,7 +50,7 @@ class SignupBlocListener extends StatelessWidget {
             ModernDialog.showError(
               context: context,
               title: 'Signup Failed',
-              message: message ?? 'Something went wrong. Please try again.',
+              message: message,
               buttonText: 'Retry',
               onPressed: () {
                 // Optionally trigger retry logic
