@@ -7,14 +7,15 @@ class AppColors {
   // Gray Scale
   static const MaterialColor gray = Colors.grey;
   static const Color lightGray = Color(0xFF757575);
+  static const Color darkGray = Color(0xFF616161);
   static const Color neutralGrey = Color(0xFF9E9E9E);
   static const Color lighterGray = Color(0xFFDEDEDE);
+  static const Color whitesmoke = Color(0xFFF5F5F5); // اللون الجديد
   static const Color offWhite = Color(0xFFFDFDFF);
   static const Color white = Color(0xFFFFFFFF);
   static const Color dark = Color(0xFF242424);
   static const Color black = Color(0xFF000000);
-  static const Color darkBlue = Color(0xFF242424);
-
+  static const Color charcoal = Color(0xFF424242);
   // Status Colors
   static const Color error = Color(0xFFEF4444);
   static const Color errorLight = Color(0xFFFEE2E2);

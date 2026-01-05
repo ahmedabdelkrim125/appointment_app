@@ -208,7 +208,7 @@ class _DialogContent extends StatelessWidget {
           // Title
           Text(
             title,
-            style: TextStyles.font18BlackBold,
+            style: TextStyles.font18DarkkBold,
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 12.h),

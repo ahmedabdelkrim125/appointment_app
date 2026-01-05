@@ -27,6 +27,16 @@ class TextStyles {
     fontWeight: FontWeightHelper.regular,
     color: AppColors.gray,
   );
+ static TextStyle font12GruyMedium = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: AppColors.charcoal,
+  );
+  //  static TextStyle font12Gruyregular = TextStyle(
+  //   fontSize: 12.sp,
+  //   fontWeight: FontWeightHelper.regular,
+  //   color: AppColors.charcoal,
+  // );
 
   static TextStyle font13GruyRegular = TextStyle(
     fontSize: 13.sp,
@@ -45,11 +55,16 @@ class TextStyles {
     fontWeight: FontWeightHelper.bold,
     color: AppColors.gray[700],
   );
+  static TextStyle font11DarkGrayRegular = TextStyle(
+    fontSize: 11.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.darkGray,
+  );
 
   static TextStyle font14DarkBlueMedium = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.medium,
-    color: AppColors.darkBlue,
+    color: AppColors.dark,
   );
 
   static TextStyle font14GruyRegular = TextStyle(
@@ -82,9 +97,25 @@ class TextStyles {
     color: AppColors.dark,
   );
 
+  static TextStyle font18WhiteMedium = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: AppColors.white,
+  );
+static TextStyle font12BlueRegular = TextStyle(
+  fontSize: 12.sp,
+  fontWeight: FontWeightHelper.regular,
+  color: AppColors.primary,
+);
+
   static TextStyle font14BlackRegular = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.regular,
+    color: AppColors.dark,
+  );
+  static TextStyle font18DarkSemiBold = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.semiBold,
     color: AppColors.dark,
   );
 
@@ -95,7 +126,7 @@ class TextStyles {
   );
 
   // Dialog Styles
-  static TextStyle font18BlackBold = TextStyle(
+  static TextStyle font18DarkkBold = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeightHelper.bold,
     color: AppColors.black,
@@ -105,6 +136,12 @@ class TextStyles {
     fontSize: 16.sp,
     fontWeight: FontWeightHelper.medium,
     color: AppColors.black,
+  );
+
+  static TextStyle font16BlackBold = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColors.dark,
   );
 
   static TextStyle font14WhiteSemiBold = TextStyle(

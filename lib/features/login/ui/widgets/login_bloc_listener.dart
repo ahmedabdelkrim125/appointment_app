@@ -51,7 +51,7 @@ class LoginBlocListener extends StatelessWidget {
             ModernDialog.showError(
               context: context,
               title: 'Login Failed',
-              message: message ?? 'Something went wrong. Please try again.',
+              message: message,
               buttonText: 'Retry',
               onPressed: () {
                 // Optionally trigger retry logic
